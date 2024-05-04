@@ -19,7 +19,7 @@ export default function(size, pathGen, geo, r, action, band) {
   // const canvas = d3.select('body').append('canvas').node();
   [canvas.width, canvas.height] = size;
 
-  const context = canvas.getContext('2d');
+  const context = canvas.getContext('2d', { willReadFrequently: true });
 
   const canvasPath = pathGen.context(context);
 
