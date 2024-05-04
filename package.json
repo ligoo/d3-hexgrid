@@ -7,7 +7,7 @@
     "d3-module",
     "d3-hexgrid"
   ],
-  "homepage": "https://github.com/larsvers/d3-hexgrid",
+  "homepage": "https://github.com/ligoo/d3-hexgrid",
   "author": {
     "name": "Lars Verspohl",
     "url": "https://www.datamake.io"
@@ -20,7 +20,7 @@
   "browserslist": "> 0.25%, not dead",
   "repository": {
     "type": "git",
-    "url": "https://github.com/larsvers/d3-hexgrid.git"
+    "url": "https://github.com/ligoo/d3-hexgrid.git"
   },
   "scripts": {
     "lint": "eslint src/",
