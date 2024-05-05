@@ -1,5 +1,66 @@
 # d3-hexgrid
 
+## Ligoo Fork
+
+This is the forked version of d3-hexbin with some slight improvements. It's using the latest
+source code available instead of the npm version that is stuck to 0.3.0.
+
+What has been modified inside `src/getImageData.js`:
+
+    const context = canvas.getContext('2d');
+
+to
+
+    const context = canvas.getContext('2d', { willReadFrequently: true });
+
+### Usage
+In your `package.json` just replace:
+
+    "d3-hexgrid": "latest"
+
+or
+
+    "d3-hexgrid": "0.3.0"
+
+by
+
+    "d3-hexgrid": "github:ligoo/d3-hexgrid"
+
+Finally, of course:
+
+    npm install
+
+### Source code modifications
+
+If you need to modify other things, just fork this repository.
+
+First, install the required libraries:
+
+    sudo apt-get install -y build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
+
+Now, in order to compile this project you will need node version 14:
+
+    nvm install 14
+    nvm use 14
+
+Update node-gyp:
+
+    npm install -g node-gyp
+
+Then install:
+
+    npm install
+
+Then build:
+
+    npm run build
+
+Then prepare:
+
+    npm run prepare
+
+## Original README content
+
 A wrapper of [_d3-hexbin_](https://github.com/d3/d3-hexbin), _**d3-hexgrid**_ does three things:
 
 1. It allows you to [regularly tessellate](https://www.mathsisfun.com/geometry/tessellation.html) polygons with hexagons. _**d3-hexbin**_ produces hexagons where there is data. _**d3-hexgrid**_ produces hexagons where there is a base geography you define.
