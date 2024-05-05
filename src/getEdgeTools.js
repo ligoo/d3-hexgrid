@@ -22,7 +22,7 @@ export default function(precision, size, pathGen, geo, r, band) {
   // const canvasHex = d3.select('body').append('canvas').node()
   canvasHex.width = w;
   canvasHex.height = h;
-  const contextHex = canvasHex.getContext('2d');
+  const contextHex = canvasHex.getContext('2d', { willReadFrequently: true });
 
   // Get the hexagon's corner points.
   const hexCorners = Array(7);
@@ -43,7 +43,7 @@ export default function(precision, size, pathGen, geo, r, band) {
   // const canvasImage = d3.select('body').append('canvas').node();
   canvasImage.width = width * precision;
   canvasImage.height = height * precision;
-  const contextImage = canvasImage.getContext('2d');
+  const contextImage = canvasImage.getContext('2d', { willReadFrequently: true });
 
   // Set the context for the path generator for use with Canvas.
   pathGen.context(contextImage);
@@ -69,7 +69,7 @@ export default function(precision, size, pathGen, geo, r, band) {
   // const canvasMix = d3.select('body').append('canvas').node()
   canvasMix.width = w;
   canvasMix.height = h;
-  const contextMix = canvasMix.getContext('2d');
+  const contextMix = canvasMix.getContext('2d', { willReadFrequently: true });
 
   return { canvasHex, canvasImage, contextMix };
 }

@@ -13,6 +13,8 @@ to
 
     const context = canvas.getContext('2d', { willReadFrequently: true });
 
+The same was applied to `.getContext('2d')` inside `getEdgeTools.js`
+
 ### Usage
 In your `package.json` just replace:
 
